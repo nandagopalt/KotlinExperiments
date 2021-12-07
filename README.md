@@ -2,8 +2,6 @@
 ***
 **1. Suspending Function**
 
-! [Earth] (https://www.sciencealert.com/the-earth-is-moving-substantially-less-because-of-the-global-pandemic)
-
 - Suspending function is a kind of normal method that labels the specific method as execution of long running task and usually gets executed in the background thread unblocking the current thread.
 > In simple, a function that could be started, paused and resumed.  
 - In general, the suspending functions doesn't block the thread but it suspends the coroutines itself. 
