@@ -1,3 +1,5 @@
+package Logical;
+
 import java.util.HashMap;
 import java.util.Map;
 
