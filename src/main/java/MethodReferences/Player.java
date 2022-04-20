@@ -1,5 +1,7 @@
 package MethodReferences;
 
+import java.util.Comparator;
+
 public class Player {
     private String name;
     private int rank;
