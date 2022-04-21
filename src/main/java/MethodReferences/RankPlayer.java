@@ -53,7 +53,8 @@ public class RankPlayer {
         //Comparator<Player> comparator = Comparator.comparingInt(Player::getRank);
         //playerList.sort(comparator.reversed());
         //System.out.println("Player List after sorting [Descending order based on Rank attribute/field] :" + playerList);
-
+        List<Player> playerStreamList2 = playerList.stream().sorted(Comparator.comparingInt(Player::getRank).reversed()).collect(Collectors.toList());
+        playerStreamList2.forEach(System.out::println);
         //System.out.println("Rank list :" + rankList);
 
         // 3. Sorting the rank list in ascending order of sequence
