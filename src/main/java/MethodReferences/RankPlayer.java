@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 
 public class RankPlayer {
     public static void main(String[] args) {
-        //List<Integer> rankList = Arrays.asList(21, 23, 20, 31, 25);
+        List<Integer> rankList = Arrays.asList(21, 23, 20, 31, 25);
         List<Player> playerList = Arrays.asList(
                 new Player("Player 1", 21, 3.18),
                 new Player("Player 2", 23, 3.15),
@@ -36,6 +36,7 @@ public class RankPlayer {
                 //(player1, player2) -> Integer.compare(player1.getRank(), player2.getRank())
                 Comparator.comparingInt(Player::getRank)
         ).collect(Collectors.toList());
+        System.out.println("Player List after sorting [Ascending order based on Rank attribute/field]");
         playerStreamList.forEach(System.out::println);
         //System.out.println("Player List after sorting [Ascending order based on Rank attribute/field] :" + playerList);
         //playerList.forEach(System.out::println);
@@ -54,6 +55,7 @@ public class RankPlayer {
         //playerList.sort(comparator.reversed());
         //System.out.println("Player List after sorting [Descending order based on Rank attribute/field] :" + playerList);
         List<Player> playerStreamList2 = playerList.stream().sorted(Comparator.comparingInt(Player::getRank).reversed()).collect(Collectors.toList());
+        System.out.println("Player List after sorting [Descending order based on Rank attribute/field] :");
         playerStreamList2.forEach(System.out::println);
         //System.out.println("Rank list :" + rankList);
 
@@ -68,7 +70,9 @@ public class RankPlayer {
         //rankList.sort((Integer element1, Integer element2) -> element1.compareTo(element2));
         // Using method references
         //rankList.sort(Integer::compareTo);
-        //System.out.println("Rank List after sorting [Ascending order]: " + rankList);
+        List<Integer> rankList1 = rankList.stream().sorted().collect(Collectors.toList());
+        System.out.println("Rank List after sorting [Ascending order]: " + rankList1);
+
 
         // 4. Sorting the rank list in descending order of sequence
         /*rankList.sort(new Comparator<Integer>() {
@@ -81,14 +85,27 @@ public class RankPlayer {
         // Using the method references
         //Comparator<Integer> comparator1 = Integer::compareTo;
         //rankList.sort(comparator1.reversed());
-        //System.out.println("Rank List after sorting [Descending order]: " + rankList);
+        Comparator<Integer> comparator = Integer::compareTo;
+        List<Integer> rankList2 = rankList.stream().sorted(comparator.reversed()).collect(Collectors.toList());
+        System.out.println("Rank List after sorting [Descending order]: " + rankList2);
 
-        /*
         List<String> namesList = Arrays.asList("Mohammed", "Jack", "Johnny");
+        // Normal way of using the comparator to sort the collection
+        namesList.sort(new Comparator<String>() {
+            public int compare(String element1, String element2) {
+                return element1.compareToIgnoreCase(element2);
+            }
+        });
+        System.out.println("Normal sort");
+        namesList.forEach(element -> System.out.println(element));
         // Using the lambda expression [Ascending order]
         namesList.sort((element1, element2) -> element1.compareToIgnoreCase(element2));
+        System.out.println("Lambda expression");
+        namesList.forEach(element -> System.out.println(element));
         // Using the method references [Ascending order]
         namesList.sort(String::compareTo);
+        System.out.println("Method reference");
+        namesList.forEach(element -> System.out.println(element));
         // Using the lambda expression [Descending order]
         namesList.sort((element1, element2) -> element2.compareToIgnoreCase(element1));
         // Using the method references [Descending order]
@@ -101,6 +118,5 @@ public class RankPlayer {
         List<String> namesStreamsDescendingList = namesList.stream().
                 sorted(descendingComparator.reversed()).
                 collect(Collectors.toList());
-         */
     }
 }
