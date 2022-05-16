@@ -21,7 +21,7 @@ public class ArrayManipulationExample {
             System.out.printf(" %d ", element);
         }
     }
-
+    // Add Element
     private int[] addElement(int[] arr, int indexPositionToInsert, int insertionNumber) {
         int[] result = new int[arr.length + 1];
         for (int i = 0; i < arr.length; i++) {
@@ -35,7 +35,7 @@ public class ArrayManipulationExample {
         result[indexPositionToInsert] = insertionNumber;
         return result;
     }
-
+    // Add Element
     private int[] addElementV2(int[] arr, int indexPositionToInsert, int insertionNumber) {
         int[] result = new int[arr.length + 1];
         for (int i = 0; i < indexPositionToInsert; i++) {
@@ -48,6 +48,7 @@ public class ArrayManipulationExample {
         return result;
     }
 
+    // Find Element
     private int findElement(int[] arr, int element) {
         int indexPosition = -1;
         for (int i = 0; i < arr.length - 1; i++) {
@@ -58,7 +59,7 @@ public class ArrayManipulationExample {
         }
         return indexPosition;
     }
-
+    // Delete Element
     private int[] deleteElement(int[] arr, int elementToDelete) {
         int[] result = new int[arr.length - 1];
         int indexPosition = findElement(arr, elementToDelete);
@@ -71,6 +72,7 @@ public class ArrayManipulationExample {
         return result;
     }
 
+    // Delete Element
     private int[] deleteElementV2(int[] arr, int elementToDelete) {
         int indexPosition = findElement(arr, elementToDelete);
         for (int i = indexPosition + 1; i < arr.length; i++) {
