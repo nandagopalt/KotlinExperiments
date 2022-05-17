@@ -15,6 +15,7 @@ public class ArrayManipulationExample {
         System.out.println("\nTime taken to complete the execution :" + (completionTime - startTime) + "ms");
     }
 
+    // Print Element
     private void printElement(String message, int[] arr) {
         System.out.println(message);
         for (Integer element : arr) {
