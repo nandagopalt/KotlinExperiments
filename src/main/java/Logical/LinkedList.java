@@ -26,4 +26,45 @@ public class LinkedList {
         return list;
     }
 
+    public static void printList(LinkedList list) {
+        System.out.println("Elements in the list are :");
+        Node lastNode = list.head;
+        while (lastNode != null) {
+            System.out.println(lastNode.getData());
+            lastNode = lastNode.getNext();
+        }
+    }
+
+    public static LinkedList deleteItem(LinkedList list, int element) {
+        Node currentNode = list.head;
+        Node previousNode = null;
+        if (currentNode != null && currentNode.getData() == element) {
+            list.head = currentNode.getNext();
+            System.out.println("Element " + element + " found and deleted");
+            return list;
+        }
+        while (currentNode != null && currentNode.getData() != element) {
+            previousNode = currentNode;
+            currentNode = currentNode.getNext();
+        }
+        if (currentNode != null) {
+            previousNode.setNext(currentNode.getNext());
+            System.out.println("Element " + element + " found and deleted");
+        }
+        if (currentNode == null) {
+            System.out.println("Element " + element + " not found");
+        }
+        return list;
+    }
+
+    public static void main(String args[]) {
+        LinkedList list = new LinkedList();
+        insert(list, 3);
+        insert(list, 1);
+        insert(list, 2);
+        printList(list);
+        deleteItem(list, 2);
+        printList(list);
+    }
+
 }
