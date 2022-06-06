@@ -1,6 +1,7 @@
 package Logical;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 public class HashMapExample1 {
@@ -27,5 +28,22 @@ public class HashMapExample1 {
         for (String value : map.values()) {
             System.out.println("Value : " + value);
         }
+
+        // Iterator for iterating the values for the hashmap
+        Iterator<String> iterator1 = map.values().iterator();
+        System.out.println("Values are :");
+        while (iterator1.hasNext()) {
+            System.out.print(iterator1.next());
+            System.out.print(" ,");
+        }
+
+        // Iterator for iterating the keyset for the hashmap
+        Iterator<Integer> iterator2 = map.keySet().iterator();
+        System.out.println("Keys are :");
+        while (iterator2.hasNext()) {
+            System.out.print(iterator2.next());
+            System.out.print(" ,");
+        }
+
     }
 }
