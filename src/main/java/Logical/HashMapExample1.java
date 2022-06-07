@@ -34,7 +34,7 @@ public class HashMapExample1 {
         System.out.println("Values are :");
         while (iterator1.hasNext()) {
             System.out.print(iterator1.next());
-            System.out.print(" ,");
+            System.out.print(", ");
         }
 
         // Iterator for iterating the keyset for the hashmap
@@ -42,7 +42,7 @@ public class HashMapExample1 {
         System.out.println("Keys are :");
         while (iterator2.hasNext()) {
             System.out.print(iterator2.next());
-            System.out.print(" ,");
+            System.out.print(", ");
         }
 
     }
