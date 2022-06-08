@@ -33,16 +33,16 @@ public class HashMapExample1 {
         Iterator<String> iterator1 = map.values().iterator();
         System.out.println("Values are :");
         while (iterator1.hasNext()) {
-            System.out.print(iterator1.next());
             System.out.print(", ");
+            System.out.print(iterator1.next());
         }
 
         // Iterator for iterating the keyset for the hashmap
         Iterator<Integer> iterator2 = map.keySet().iterator();
         System.out.println("Keys are :");
         while (iterator2.hasNext()) {
-            System.out.print(iterator2.next());
             System.out.print(", ");
+            System.out.print(iterator2.next());
         }
 
     }
