@@ -1,6 +1,7 @@
 package Logical;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 public class FindKeyFromValueHashMap {
@@ -10,12 +11,18 @@ public class FindKeyFromValueHashMap {
         map.put("One", 1);
         map.put("Two", 2);
         map.put("Three", 3);
-        for (Map.Entry<String, Integer> entrySet : map.entrySet()) {
+        /*for (Map.Entry<String, Integer> entrySet : map.entrySet()) {
             if (entrySet.getValue() == value) {
                 System.out.println("Key :" + entrySet.getKey() + "," + "Value :" + entrySet.getValue());
                 break;
             }
+        }*/
+        Iterator<Map.Entry<String, Integer>> entrySet = map.entrySet().iterator();
+        while (entrySet.hasNext()) {
+            if (value == entrySet.next().getValue()) {
+                System.out.println("Key :" + entrySet.next().getKey() + "," + "Value :" + entrySet.next().getValue());
+                break;
+            }
         }
-
     }
 }
