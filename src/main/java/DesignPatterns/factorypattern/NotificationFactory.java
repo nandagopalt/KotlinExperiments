@@ -1,4 +1,4 @@
-package designpatterns.factorypattern;
+package DesignPatterns.factorypattern;
 
 public class NotificationFactory {
     private static Notification notification;

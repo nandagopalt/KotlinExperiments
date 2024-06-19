@@ -1,4 +1,4 @@
-package designpatterns.stratergypattern;
+package DesignPatterns.stratergypattern;
 
 public abstract class Student {
     protected String name;

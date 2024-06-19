@@ -1,4 +1,4 @@
-package designpatterns.stratergypattern;
+package DesignPatterns.stratergypattern;
 
 public class Facebook implements SocialNetwork {
     @Override

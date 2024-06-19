@@ -6,3 +6,6 @@ gradlew
 gradle.properties
 *.bat
 *.kts
+*.iml
+lib/
+out/

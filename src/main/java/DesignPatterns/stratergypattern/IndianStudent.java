@@ -1,4 +1,4 @@
-package designpatterns.stratergypattern;
+package DesignPatterns.stratergypattern;
 
 public class IndianStudent extends Student {
     public IndianStudent(String name) {
